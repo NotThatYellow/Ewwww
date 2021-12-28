@@ -1,0 +1,409 @@
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+.main {
+  display: relative;
+  position: absolute; 
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+figure {
+  display: grid; 
+  position: relative; 
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  filter: grayscale(.8);
+}
+figure img{
+  width: 100%;
+  height: 100%;
+}
+figure::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  content: '';
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+/*column image fade ease in*/
+.column {
+  display: grid;
+  gap: 2px;
+  width: calc(100% / 2 - 10px);
+  margin: 0px;
+  padding: 0px;
+  animation: fadeIn ease 5s;
+  animation-delay: 3s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+@keyframes column{
+  10% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+/* The style below is just for the appearance of the example div */
+
+.style {
+  width:90vw; height:90vh;
+  text-align:center;
+  padding-top:calc(50vh - 50px);
+  margin-left:5vw;
+  border:4px double #F00;
+  background-color:#000;
+}
+.style p {
+  color:#fff;
+  font-size:50px;
+}
+figure:hover{
+  animation: bloom ease-in-out .65s forwards;
+}
+figure:hover::before {
+  animation: circle .75s;
+}
+@keyframes bloom {
+  0% {
+    filter: grayscale(.8);
+  }
+  40% {
+    filter: grayscale(.5);
+  }
+  100% {
+    filter: grayscale(0);
+  }
+}
+@keyframes circle {
+  0% {
+    opacity: .5;
+    background: rgba(213,156,34,.2);
+    
+  }
+  40% {
+    opacity: 1;
+    background: rgba(213, 34, 159, 0.13);
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+/*styling the nav bar*/
+#main-menu .nav-bar li 
+{ display:flex;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  gap: 4px; 
+  padding: 25px;
+ }
+#main-menu 
+.nav-bar li a {
+  text-align: center;
+  float: right;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #333;
+	text-shadow: 1px 1px 1px rgb(255, 255, 255);
+}  
+li a:hover {
+  text-align: center;
+  text: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  color: white;
+}
+/*border animation*/
+a{
+  display: block;
+  width: 150px;
+  line-height: 40px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a:before,
+a:after{
+  position: absolute;
+  content: "";
+  transition: all .25s;
+}
+
+a:before{
+  border-bottom: 2px solid rgb(255, 253, 253);
+  border-left: 2px solid rgb(255, 255, 255);
+  width: 10%;
+  height: 33%;
+  left: -10px;
+  bottom: -10px;
+}
+
+a:after{
+  border-top: 2px solid rgb(255, 255, 255);
+  border-right: 2px solid rgb(255, 252, 252);
+  width: 10%;
+  height: 33%;
+  top: -10px;
+  right: -10px;
+}
+
+a:hover:before{
+  width: 112%;
+  height: 140%;
+}
+
+a:hover:after{
+  width: 112%;
+  height: 140%;
+}
+/*welcome edits*/
+.welcome {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  text-transform: uppercase;
+  left:0;
+  right:0;
+  margin: auto;
+  width:100%;
+  text-align: center;
+  height: fit-content;
+  bottom: 0;
+  top: 0;
+}
+.welcome span {
+  display: inline-block;
+  color:transparent;
+  text-shadow: 0px 0px 0px black;
+  animation-duration: 4s;
+  animation-iteration-count:initial
+
+}
+.welcome span:nth-child(1){
+  animation-name: disappearight;
+}
+.welcome span:nth-child(2){
+  animation-name: disappearight;
+  animation-delay: .3s;
+}
+.welcome span:nth-child(3){
+  animation-name: disappearight;
+  animation-delay: .6s;
+}
+.welcome span:nth-child(4){
+  animation-name: disappearight;
+  animation-delay: .8s;
+}
+.welcome span:nth-child(5){
+  animation-name: disappearight;
+  animation-delay: 1s;
+}
+.welcome span:nth-child(6){
+  animation-name: disappearight;
+  animation-delay: 1.3s;
+}
+.welcome span:nth-child(7){
+  animation-name: disappearight;
+  animation-delay: 1.6s;
+}
+.welcome span:nth-child(8){
+  animation-name: disappearight;
+  animation-delay: 2s;
+}
+.disappear span:nth-child(9){
+  animation-name: disappearight;
+  animation-delay: 2.3s;
+}
+@keyframes disappearleft{
+  50% {transform: skew(50deg) translateY(-200%);
+      text-shadow: 0px 0px 50px;
+        opacity: 0;
+  }
+}
+@keyframes disappearight{
+  50% {transform: skew(-50deg) translateY(-200%);
+      text-shadow: 0px 0px 50px;
+        opacity: 0;
+  }
+}
+.slide-in {
+  animation: slide-in 1.75s ease-out;
+}
+
+.slide-out {
+  animation: slide-out 1.75s ease-out;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translate(-120%);
+  }
+  25% {
+    transform: translate(-120%) scale(0.8);
+  }
+  75% {
+    transform: scale(0.8);
+    transition-timing-function: ease-out;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in {
+  25% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: translate(120%) scale(0.8);
+    transition-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(120%) scale(1);
+  }
+}
+/*page animation*/
+div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+}
+
+h1 {
+	margin: 1rem 0;
+}
+
+h2 {
+	color: white;
+	opacity: 0;
+	font-size: 5rem;
+	animation: fadeIn .5s ease forwards;
+}
+
+p {
+	font-size: 4rem;
+	opacity: 0;
+	animation: fadeInText 2s ease forwards 3s;
+}
+.intro {
+	height: 100vh;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main {
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(255, 255, 255);
+	transform: scale(0, 0);
+	animation: animate 1s ease-in forwards 2s;
+	overflow: hidden;
+}
+
+.content {
+	width: 100%;
+	text-align: center;
+	overflow-y: auto;
+}
+
+@keyframes animate {
+	0% {
+		transform: scale(0, 0.005);
+	}
+	50% {
+		transform: scaleY(0.005);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(-50%);
+	}
+}
+@keyframes fadeInText {
+	from {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+/*typing animation*/
+.typing { 
+	font-size: 20px;
+  position: absolute;
+  bottom: 4px; 
+  width: 100px;
+  line-height: 80px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: 520;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+	width: 16.5em; 
+	white-space: nowrap;
+	overflow: hidden;
+  animation-delay: inherit;
+	-webkit-animation: typing 9s steps(38, end),
+	           blink-caret .4s step-end infinite alternate;
+}
